@@ -157,7 +157,7 @@ class MoyasarPayment {
     required String publishableKey,
     required String phoneNumber,
   }) async {
-    var source = {'type': 'StcPay', 'mobile': phoneNumber, 'cashier': 'app'};
+    var source = {'type': 'stcpay', 'mobile': phoneNumber, 'cashier': 'app'};
     return _pay(
         description: description,
         amount: amount,

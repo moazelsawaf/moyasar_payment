@@ -170,10 +170,8 @@ class MoyasarPayment {
   /// * [transactionUrl] 	URL to confirm payment authorization.
   /// * [otpValue]
 
-  Future stcPayOtp(
+  Future<http.Response> stcPayOtp(
       {required String transactionUrl, required String otpValue}) async {
-    var data =
-        await http.get(Uri.parse(transactionUrl + '&otp_value=' + otpValue));
-    return data;
+    return await http.get(Uri.parse(transactionUrl + '&otp_value=' + otpValue));
   }
 }

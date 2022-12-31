@@ -123,7 +123,7 @@ class MoyasarPayment {
     required String publishableKey,
     required String cardHolderName,
     required String cardNumber,
-    required int cvv,
+    required String cvv,
     required int expiryManth,
     required int expiryYear,
     required String callbackUrl,

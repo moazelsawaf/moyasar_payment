@@ -64,7 +64,7 @@ PayModel res = await MoyasarPayment().applePay(
 if (res.type != null) { // User Cancelled The Payment
         print(res.message);
     } else {
-        ApplePayModel applePayModel = ApplePayModel.fromJson(res.source);
+        ApplePayModel applePayModel = ApplePayModel.fromJson(res);
     
     }
 ```

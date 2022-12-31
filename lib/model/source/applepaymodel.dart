@@ -1,4 +1,5 @@
 class ApplePayModel {
+  String? transactionId; // Payment’s internal identifier
   String? type; // type of payment, creditcard.
   String? company; // credit card’s company mada or visa or master or amex
   String? name; // credit card’s holder name
@@ -11,17 +12,20 @@ class ApplePayModel {
       this.gatewayId, this.referenceNumber);
 
   ApplePayModel.fromJson(Map<String, dynamic> json) {
-    type = json['type'];
-    company = json['company'];
-    name = json['name'];
-    number = json['number'];
-    message = json['message'];
-    gatewayId = json['gateway_id'];
-    referenceNumber = json['reference_number'];
+    final source = json['source'];
+    transactionId = json['id'];
+    type = source['type'];
+    company = source['company'];
+    name = source['name'];
+    number = source['number'];
+    message = source['message'];
+    gatewayId = source['gateway_id'];
+    referenceNumber = source['reference_number'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = transactionId;
     data['type'] = type;
     data['company'] = company;
     data['name'] = name;

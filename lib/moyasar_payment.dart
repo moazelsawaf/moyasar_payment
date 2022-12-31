@@ -64,7 +64,7 @@ class MoyasarPayment {
   /// * [paymentItems] ``` {'item 1': 1000 , 'item2' : 100} ``` or  ```{'Name Company': 1000,'total order': 1000}```
   /// * [currencyCode] e.g. SAR or UAE ....
   /// * [countryCode]  e.g. SA or UA ...
-  Future applePay({
+  Future<PayModel> applePay({
     String? description,
     required double amount,
     required String publishableKey,
